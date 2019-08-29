@@ -10,7 +10,7 @@ app.use(cors());
 app.listen(process.env.PORT || 3000);
 
 app.use(async (ctx, next) => {
-  if (ctx.path == "/parse-file") {
+  if (ctx.path == "/parse-resume") {
     let url = ctx.query.fileUrl;
 
     ctx.assert(url, 400, "the query: `fileUrl` cannot be null");
