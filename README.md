@@ -1,5 +1,5 @@
-# parse-file-server
-🔍A node.js server that parses file and extracts information 
+# parse-resume-server
+🔍A node.js server that parses resume and extracts information 
 
 ## Dev
 
