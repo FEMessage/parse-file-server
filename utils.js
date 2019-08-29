@@ -1,8 +1,9 @@
 function getPhone(str = "") {
-  const reg = /1\d{10}/;
+  const reg = /1\d{10}|1\d{2}-\d{4}-\d{4}/;
   const matches = str.match(reg);
+	const result = matches ? matches[0] : ''
 
-  return matches ? matches[0] : "";
+  return result.includes('-') ? result.replace(/-/g, '') : result;
 }
 
 function getEmail(str) {

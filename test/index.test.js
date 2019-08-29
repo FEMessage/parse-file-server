@@ -5,10 +5,12 @@ describe("extract infomation", () => {
     const str1 = "电\n 话：\n 18614250055";
     const str2 = "手机：\n 18614250055";
     const str3 = "手机：13810968321 | 邮箱：13810968321@163.com";
+    const str4 = "手机：      173-5465-1891";
 
     expect(getPhone(str1)).toBe("18614250055");
     expect(getPhone(str2)).toBe("18614250055");
     expect(getPhone(str3)).toBe("13810968321");
+    expect(getPhone(str4)).toBe("17354651891");
     expect(getPhone("phone")).toBe("");
     expect(getPhone("")).toBe("");
   });
