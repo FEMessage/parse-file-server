@@ -13,7 +13,22 @@ function getEmail(str) {
   return matches ? matches[0] : ''
 }
 
+function getName(str) {
+  let splitDotArray = str.split('.')
+  let filename = splitDotArray[splitDotArray.length - 2]
+  let splitDashArray = filename.replace(/\.|\_|\s|】/g, '-').split('-')
+
+  let result = splitDashArray.pop()
+
+  if (/\d{13}/.test(result)) result = splitDashArray.pop()
+  if (result.includes('拉勾')) result = splitDashArray.pop()
+  if (result.includes('年')) result = splitDashArray.pop()
+
+  return result
+}
+
 module.exports = {
   getPhone,
   getEmail,
+  getName
 }

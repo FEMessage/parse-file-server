@@ -1,4 +1,4 @@
-const {getPhone, getEmail} = require('../utils')
+const {getPhone, getEmail, getName} = require('../utils')
 
 describe('extract infomation', () => {
   test('getPhone', () => {
@@ -25,5 +25,20 @@ describe('extract infomation', () => {
     expect(getEmail(str3)).toBe('13810968321@163.com')
     expect(getPhone('email')).toBe('')
     expect(getPhone('')).toBe('')
+  })
+
+  test('getName', () => {
+    const self1 = 'https://deepexi-serverless.oss-cn-shenzhen.aliyuncs.com/Web前端技术leader_姓名-1566355077284.pdf'
+    const self2 = 'https://deepexi-serverless.oss-cn-shenzhen.aliyuncs.com/简历-姓名-1566994913729.pdf'
+    const lagou = '前端开发工程师2-姓名-拉勾招聘-1566994913729.pdf'
+    const boss = '【web前端 _ 广州8-16K】姓名 2年-1566994913729.pdf'
+
+    const name = '姓名'
+
+    expect(getName(self1)).toBe(name)
+    expect(getName(self2)).toBe(name)
+    expect(getName(lagou)).toBe(name)
+    expect(getName(boss)).toBe(name)
+
   })
 })

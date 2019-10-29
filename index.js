@@ -27,6 +27,7 @@ app.use(async (ctx, next) => {
     let data = await pdf(resp.data, {max: 1})
 
     ctx.body = {
+      name: utils.getName(url),
       phone: utils.getPhone(data.text),
       email: utils.getEmail(data.text),
     }
